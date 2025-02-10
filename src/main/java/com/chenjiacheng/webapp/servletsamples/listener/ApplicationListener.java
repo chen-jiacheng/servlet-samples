@@ -1,5 +1,8 @@
 package com.chenjiacheng.webapp.servletsamples.listener;
 
+import lombok.extern.slf4j.Slf4j;
+
+import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
@@ -9,16 +12,16 @@ import javax.servlet.annotation.WebListener;
  * @author chenjiacheng
  * @since 1.0.0
  */
-@WebListener   // This annotation is used to declare a class as a listener.
+@Slf4j
+@WebListener
 public class ApplicationListener implements ServletContextListener {
-
     @Override
-    public void contextInitialized(javax.servlet.ServletContextEvent sce) {
-        System.out.println("ApplicationListener.contextInitialized");
+    public void contextInitialized(ServletContextEvent sce) {
+        log.info("ApplicationListener.contextInitialized:{}",sce);
     }
 
     @Override
-    public void contextDestroyed(javax.servlet.ServletContextEvent sce) {
-        System.out.println("ApplicationListener.contextDestroyed");
+    public void contextDestroyed(ServletContextEvent sce) {
+        log.info("ApplicationListener.contextDestroyed:{}",sce);
     }
 }
