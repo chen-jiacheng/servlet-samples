@@ -9,13 +9,13 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @Slf4j
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/hello")
 public class HelloServlet extends HttpServlet {
-    private String message;
+    private String message = "hello world";
 
     @Override
     public void init() {
-        message = "Hello World!";
+        log.info("HelloServlet.init");
     }
 
     @Override

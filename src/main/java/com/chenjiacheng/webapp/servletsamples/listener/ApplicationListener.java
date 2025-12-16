@@ -2,6 +2,7 @@ package com.chenjiacheng.webapp.servletsamples.listener;
 
 import lombok.extern.slf4j.Slf4j;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
