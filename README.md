@@ -58,3 +58,26 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 
 The samples in this repository are based on the [Java Servlet API](https://docs.oracle.com/javaee/7/api/javax/servlet/package-summary.html) and the [Apache Tomcat documentation](https://tomcat.apache.org/tomcat-9.0-doc/index.html). We would like to thank the authors of these resources for their valuable contributions to the Java community.
 
+
+=====
+
+分支管理:
+1. 核心分支
+1.1 main (或 master)     # 主分支 - 永远是可发布的稳定版本
+1.2 develop              # 开发分支 - 集成了所有已完成功能
+
+2. 辅助分支
+2.1 feature/*            # 功能分支 - 开发新功能
+2.2 release/*            # 发布分支 - 准备发布版本
+2.3 hotfix/*             # 热修复分支 - 紧急修复生产问题
+2.4 support/*            # 支持分支 - 维护旧版本（可选）
+
+| 分支 | 存在周期 | 起点 | 终点 | 允许谁 merge 进来 | 禁止谁 merge 出去 |
+|---|---|---|---|---|---|
+| master | 永久 | 空 | 无 | 仅 release/hotfix | 禁止直接 commit |
+| develop | 永久 | master | 无 | feature, hotfix | 禁止直接 commit |
+| feature/* | 临时 | develop | develop | 开发者任意 commit | 禁止直接 merge 到 master |
+| release/* | 临时 | develop | master + develop | 仅 bugfix | 禁止新功能 |
+| hotfix/* | 临时 | master | master + develop | 仅 bugfix | 禁止新功能 |
+
+![img.png](img.png)

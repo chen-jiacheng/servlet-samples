@@ -1,4 +1,4 @@
-package com.chenjiacheng.webapp.servletsamples.filter;
+package com.chenjiacheng.webapp.servletsamples.servlet.filter;
 
 import com.chenjiacheng.webapp.servletsamples.util.ServletUtils;
 import lombok.extern.slf4j.Slf4j;
